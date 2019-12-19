@@ -1,0 +1,167 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search Melee Videos</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'search/album.css' %}" rel="stylesheet">
+  </head>
+  <body>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Search YouTube</h1>
+      <p class="lead text-muted">Get top results for Melee matches</p>
+	  <form method="POST">
+      <div class="input-group mb-3">
+		{% csrf_token %}
+			<!-- <input type="text" name="search" class="form-control" aria-label="Username"> -->
+			<select name = "m_char1">
+				<option value = "Falco" selected>Falco</option>
+				<option value = "Fox">Fox</option>
+				<option value = "Marth">Marth</option>
+				<option value = "Jigglypuff">Jigglypuff</option>
+				<option value = "Sheik">Sheik</option>
+				<option value = "Captain Falcon">Captain Falcon</option>
+				<option value = "Mario">Mario</option>
+				<option value = "Luigi">Luigi</option>
+				<option value = "Donkey Kong">Donkey Kong</option>
+				<option value = "Link" >Link</option>
+				<option value = "Samus">Samus</option>
+				<option value = "Yoshi">Yoshi</option>
+				<option value = "Kirby" >Kirby</option>
+				<option value = "Pikachu">Pikachu</option>
+				<option value = "Ness">Ness</option>
+				<option value = "Peach" >Peach</option>
+				<option value = "Bowser">Bowser</option>
+				<option value = "Dr. Mario">Dr. Mario</option>
+				<option value = "Zelda" >Zelda</option>
+				<option value = "Young Link">Young Link</option>
+				<option value = "Ganondorf">Ganondorf</option>
+				<option value = "Pichu" >Pichu</option>
+				<option value = "Mewtwo">Mewtwo</option>
+				<option value = "Ice Climbers">Ice Climbers</option>
+				<option value = "Roy" >Roy</option>
+				<option value = "Game & Watch">Game & Watch</option>
+			</select>
+			<select name = "m_char2">
+				<option value = "Falco" selected>Falco</option>
+				<option value = "Fox">Fox</option>
+				<option value = "Marth">Marth</option>
+				<option value = "Jigglypuff">Jigglypuff</option>
+				<option value = "Sheik">Sheik</option>
+				<option value = "Captain Falcon">Captain Falcon</option>
+				<option value = "Mario">Mario</option>
+				<option value = "Luigi">Luigi</option>
+				<option value = "Donkey Kong">Donkey Kong</option>
+				<option value = "Link" >Link</option>
+				<option value = "Samus">Samus</option>
+				<option value = "Yoshi">Yoshi</option>
+				<option value = "Kirby" >Kirby</option>
+				<option value = "Pikachu">Pikachu</option>
+				<option value = "Ness">Ness</option>
+				<option value = "Peach" >Peach</option>
+				<option value = "Bowser">Bowser</option>
+				<option value = "Dr. Mario">Dr. Mario</option>
+				<option value = "Zelda" >Zelda</option>
+				<option value = "Young Link">Young Link</option>
+				<option value = "Ganondorf">Ganondorf</option>
+				<option value = "Pichu" >Pichu</option>
+				<option value = "Mewtwo">Mewtwo</option>
+				<option value = "Ice Climbers">Ice Climbers</option>
+				<option value = "Roy" >Roy</option>
+				<option value = "Game & Watch">Game & Watch</option>
+			</select>
+			<select name = "m_tourn">
+				<option value = "N/A" selected>N/A</option>
+				<option value = "The Big House 4" >The Big House 4</option>
+				<option value = "The Big House 4" >The Big House 5</option>
+				<option value = "The Big House 4" >The Big House 6</option>
+				<option value = "The Big House 4" >The Big House 7</option>
+				<option value = "The Big House 4" >The Big House 8</option>
+				<option value = "Genesis 3">Genesis 3</option>
+				<option value = "Genesis 4">Genesis 4</option>
+				<option value = "Genesis 5">Genesis 5</option>
+				<option value = "Evo 2017">Evo 2017</option>
+				<option value = "Evo 2018">Evo 2018</option>
+				<option value = "Evo 2019">Evo 2019</option>
+			</select>
+			<select name = "m_player1">
+				<option value = "N/A" selected>N/A</option>
+				<option value = "Mang0">Mang0</option>
+				<option value = "Hungrybox">Hungrybox</option>
+				<option value = "Armada">Armada</option>
+				<option value = "Leffen">Leffen</option>
+				<option value = "Axe">Axe</option>
+				<option value = "Wizzrobe">Wizzrobe</option>
+				<option value = "Zain">Zain</option>
+			</select>
+			<select name = "m_player2">
+				<option value = "N/A" selected>N/A</option>
+				<option value = "Mang0">Mang0</option>
+				<option value = "Hungrybox">Hungrybox</option>
+				<option value = "Armada">Armada</option>
+				<option value = "Leffen">Leffen</option>
+				<option value = "Axe">Axe</option>
+				<option value = "Wizzrobe">Wizzrobe</option>
+				<option value = "Zain">Zain</option>
+			</select>
+      </div>
+      <p>
+        <button href="#" type="submit"class="btn btn-primary my-2">YouTube Search</button>
+        
+      </p>
+	  </form>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+		{% for video in videos %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{video.thumbnail}}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
+            <div class="card-body">
+              <p class="card-text">{{video.title}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" href="{{video.url}}"class="btn btn-sm btn-outline-secondary">View</a>
+                </div>
+                <small class="text-muted">{{video.duration}} mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+		{% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
